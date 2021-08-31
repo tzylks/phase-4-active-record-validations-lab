@@ -11,7 +11,7 @@ class Post < ApplicationRecord
 
     def clickbait?
     
-    unless title.match(/(Won't Believe)|(Top \d)|(Secret)|(Guess)/)
+    unless title && title.match(/(Won't Believe)|(Top \d)|(Secret)|(Guess)/)
         errors.add(:title, "not clickbait")
     end
          
